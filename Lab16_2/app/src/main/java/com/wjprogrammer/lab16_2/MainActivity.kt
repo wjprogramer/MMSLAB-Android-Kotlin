@@ -10,7 +10,8 @@ class MainActivity : AppCompatActivity() {
     private var items: ArrayList<String> = ArrayList()
     private lateinit var adapter: ArrayAdapter<String>
     //定義 Provider 的 Uri
-    private val uri = Uri.parse("content://com.italkutalk.lab16")
+    private val uri = Uri.parse("content://com.wjprogrammer.lab16")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         //設定監聽器
         setListener()
     }
+
     //設定監聽器
     private fun setListener() {
         val ed_book = findViewById<EditText>(R.id.ed_book)
@@ -99,9 +101,11 @@ class MainActivity : AppCompatActivity() {
             c.close() //關閉 Cursor
         }
     }
+
     //建立 showToast 方法顯示 Toast 訊息
     private fun showToast(text: String) =
         Toast.makeText(this,text, Toast.LENGTH_LONG).show()
+
     //清空輸入的書名與價格
     private fun cleanEditText() {
         findViewById<EditText>(R.id.ed_book).setText("")
