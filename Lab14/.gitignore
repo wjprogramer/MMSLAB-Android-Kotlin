@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# My Configs
+app/services.build.properties

@@ -3,6 +3,22 @@ plugins {
     id 'kotlin-android'
 }
 
+def props = new Properties()
+file("services.build.properties").withInputStream { props.load(it) }
+
+ext.removeQuotes = { v ->
+    if((v.startsWith("\"") && v.endsWith("\"")) ||
+            (v.startsWith("\'") && v.endsWith("\'"))) {
+        v = v.substring(1, v.length()-1)
+    }
+    return v
+}
+
+def googleMapToken = removeQuotes(props.getProperty("google.map.token"))
+
+println project.rootProject
+println googleMapToken
+
 android {
     compileSdk 31
 
@@ -14,6 +30,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // buildConfigField "String", "GOOGLE_MAP_TOKEN", "\"$googleMapToken\""
+        manifestPlaceholders = [googleGeoKey: googleMapToken]
     }
 
     buildTypes {

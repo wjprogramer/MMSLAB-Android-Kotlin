@@ -25,7 +25,7 @@
         <!--此處要放入在 Google API Console 取得的 API 金鑰-->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY"/>
+            android:value="${googleGeoKey}"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
