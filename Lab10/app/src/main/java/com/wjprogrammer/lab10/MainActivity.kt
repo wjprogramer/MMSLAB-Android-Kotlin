@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         //將變數與 XML 元件綁定
         val img_frame = findViewById<ImageView>(R.id.img_frame)
         val img_tween = findViewById<ImageView>(R.id.img_tween)
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         val btn_scale = findViewById<Button>(R.id.btn_scale)
         val btn_translate = findViewById<Button>(R.id.btn_translate)
         val btn_rotate = findViewById<Button>(R.id.btn_rotate)
+
         //將動畫的 drawable 指定為 ImageView 的背景資源
         img_frame.setBackgroundResource(R.drawable.loading_animation)
         btn_start.setOnClickListener {
