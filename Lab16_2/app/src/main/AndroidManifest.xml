@@ -3,7 +3,7 @@
     package="com.wjprogrammer.lab16_2">
 
     <queries>
-        <package android:name="com.wjprogrammer.lab16" />
+        <package android:name="com.wjprogrammer.lab16_1" />
     </queries>
 
     <application
