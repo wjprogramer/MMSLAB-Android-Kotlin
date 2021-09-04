@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wjprogrammer.lab16_2">
 
+    <queries>
+        <package android:name="com.wjprogrammer.lab16" />
+    </queries>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
