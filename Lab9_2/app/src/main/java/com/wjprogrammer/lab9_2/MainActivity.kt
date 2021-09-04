@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var progressBar2: ProgressBar
     private lateinit var ll_progress: LinearLayout
     private lateinit var btn_boy: RadioButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         progressBar2 = findViewById(R.id.progressBar2)
         ll_progress = findViewById(R.id.ll_progress)
         btn_boy = findViewById(R.id.btn_boy)
+
         //對計算按鈕設定監聽器
         btn_calculate.setOnClickListener {
             when {
@@ -48,21 +50,27 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
     //建立 showToast 方法顯示 Toast 訊息
     private fun showToast(msg: String) =
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+
     //用 Coroutines 模擬檢測過程
     private fun runCoroutines() {
         tv_weight.text = "標準體重\n 無"
         tv_fat.text = "體脂肪\n 無"
         tv_bmi.text = "BMI\n 無"
+
         //初始化進度條
         progressBar2.progress = 0
         tv_progress.text = "0%"
+
         //顯示進度條
         ll_progress.visibility = View.VISIBLE
+
         GlobalScope.launch(Dispatchers.Main) {
             var progress = 0
+            
             //建立迴圈執行一百次共延長五秒
             while (progress < 100) {
                 //執行緒延遲 50ms 後執行
